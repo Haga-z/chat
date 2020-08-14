@@ -3,19 +3,19 @@ CREATE TABLE if not exists users (
     id serial PRIMARY KEY,
     username VARCHAR ( 50 ) UNIQUE NOT NULL,
     password VARCHAR ( 128 ) NOT NULL,
-    created_at TIMESTAMP NOT NULL
+    created_at TIMESTAMP NULL
 );
 
 CREATE TABLE chats (
     id serial PRIMARY KEY,
-    text varchar ( 500 ) not null,
-    created_at TIMESTAMP NOT NULL
+    name varchar ( 500 ) not null,
+    created_at TIMESTAMP NULL
 );
 
 CREATE TABLE messages (
    id serial PRIMARY KEY,
    text varchar ( 500 ) NOT NULL,
-   created_at TIMESTAMP NOT NULL,
+   created_at TIMESTAMP NULL,
    user_id INT NOT NULL,
    chat_id INT NOT NULL,
        FOREIGN KEY (user_id)
@@ -30,6 +30,7 @@ CREATE TABLE roles (
 );
 
 CREATE TABLE chat_user(
+    id serial PRIMARY KEY,
     user_id int not null,
     chat_id int not null
 );

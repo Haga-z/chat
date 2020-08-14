@@ -3,25 +3,24 @@ package kg.chat.demo.model;
 import lombok.*;
 
 import javax.persistence.*;
-import java.time.OffsetDateTime;
-import java.util.Set;
 
 @Getter
 @Setter
 @Entity
-@Table(name = "chats")
+@Table(name = "chat_user")
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class Chat {
+public class ChatUser {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    private String name;
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private User user;
 
-    @OneToMany(mappedBy = "chat")
-    private Set<ChatUser> chatUsers;
-
-    private OffsetDateTime created_at;
+    @ManyToOne
+    @JoinColumn(name = "chat_id")
+    private Chat chat;
 }
