@@ -4,6 +4,8 @@ import lombok.*;
 
 import javax.persistence.*;
 import java.time.OffsetDateTime;
+import java.util.List;
+import java.util.Set;
 
 @Getter
 @Setter
@@ -22,6 +24,16 @@ public class User {
     private String password;
 
     private OffsetDateTime created_at;
+
+    @ManyToMany
+    Set<Chat> chats;
+
+    @ManyToMany(cascade=CascadeType.MERGE)
+    @JoinTable(
+            name="user_role",
+            joinColumns={@JoinColumn(name="user_id", referencedColumnName="id")},
+            inverseJoinColumns={@JoinColumn(name="role_id", referencedColumnName="id")})
+    private List<Role> roles;
 
 
 }
