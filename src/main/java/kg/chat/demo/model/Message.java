@@ -18,9 +18,11 @@ public class Message {
     private Integer id;
 
     @OneToOne
+    @JoinColumn(name = "chat_id")
     private Chat chat;
 
-    @ManyToOne
+    @ManyToOne(targetEntity = User.class, fetch = FetchType.EAGER)
+    @JoinColumn(nullable = false, name = "user_id")
     private User user;
 
     private String text;
