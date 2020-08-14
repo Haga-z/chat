@@ -6,6 +6,7 @@ import kg.chat.demo.Repositories.UserRepository;
 import kg.chat.demo.model.Chat;
 import kg.chat.demo.model.ChatUser;
 import kg.chat.demo.model.User;
+import kg.chat.demo.service.ChatUserService;
 import lombok.AllArgsConstructor;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
@@ -21,16 +22,11 @@ import java.util.List;
 @RequestMapping
 @AllArgsConstructor
 public class ChatController {
-    private final ChatRepository chatRepository;
-    private final UserRepository userRepository;
-    private final ChatUserRepository chatUserRepository;
+    private final ChatUserService chatUserService;
 
-    @PreAuthorize("hasAuthority('USER')")
     @GetMapping("/chats")
     public String getChats(Principal principal, Model model){
-        var user = userRepository.findByUsername(principal.getName()).get();
-        List <ChatUser> chats = chatUserRepository.findAllByUserId(user.getId());
-        model.addAttribute("chats",chats);
+        model.addAttribute("chats",chatUserService.getChatUser(principal));
         return "chats";
 
     }

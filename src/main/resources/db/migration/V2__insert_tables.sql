@@ -5,8 +5,8 @@ INSERT INTO users (id,created_at,password,username)values
 (4,null,'$2y$12$p2B5S8.hZo3PlzgKYS/oi.Idq/y7Ux6/ww9KqxDWqSa52hUiAeIYK','user3');
 
 INSERT INTO roles(id,name)values
-(1,'ADMIN'),
-(2,'USER');
+(1,'ROLE_ADMIN'),
+(2,'ROLE_USER');
 
 INSERT INTO user_role(user_id,role_id)values
 (1,1),
