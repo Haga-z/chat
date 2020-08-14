@@ -2,10 +2,8 @@ package kg.chat.demo.DTO;
 
 import kg.chat.demo.model.Chat;
 import kg.chat.demo.model.Message;
-import kg.chat.demo.model.User;
 import lombok.*;
 
-import javax.persistence.criteria.CriteriaBuilder;
 import java.time.OffsetDateTime;
 
 @Data

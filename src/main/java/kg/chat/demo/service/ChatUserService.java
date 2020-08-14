@@ -4,7 +4,6 @@ import kg.chat.demo.DTO.ChatUserDTO;
 import kg.chat.demo.Repositories.ChatRepository;
 import kg.chat.demo.Repositories.ChatUserRepository;
 import kg.chat.demo.Repositories.UserRepository;
-import kg.chat.demo.model.ChatUser;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 

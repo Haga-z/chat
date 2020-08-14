@@ -1,6 +1,5 @@
 package kg.chat.demo.DTO;
 
-import kg.chat.demo.model.Role;
 import kg.chat.demo.model.User;
 import lombok.*;
 
