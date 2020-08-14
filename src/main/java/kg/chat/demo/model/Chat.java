@@ -20,12 +20,9 @@ public class Chat {
 
     private String name;
 
-    @ManyToMany
-    @JoinTable(
-            name = "chat_users",
-            joinColumns = @JoinColumn(name = "chat_id"),
-            inverseJoinColumns = @JoinColumn(name = "user_id"))
-    Set<User> users;
+    @ManyToMany(cascade = CascadeType.ALL)
+    @JoinTable
+    private Set<User> users;
 
     private OffsetDateTime created_at;
 }

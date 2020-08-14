@@ -25,8 +25,8 @@ public class User {
 
     private OffsetDateTime created_at;
 
-    @ManyToMany
-    Set<Chat> chats;
+    @ManyToMany(mappedBy = "users")
+    private Set<Chat> chats;
 
     @ManyToMany(cascade=CascadeType.MERGE)
     @JoinTable(
