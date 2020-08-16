@@ -10,6 +10,7 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler;
 
 
 import javax.sql.DataSource;
@@ -39,24 +40,25 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
         http
                 .authorizeRequests()
                 .antMatchers("/admin/**").hasRole("ADMIN")
-                .antMatchers("/login*").permitAll()
-                .antMatchers("/").authenticated()
                 .antMatchers("/chats").hasRole("USER")
+                .antMatchers("/login").permitAll()
                 .and()
                 .formLogin()
                 .loginPage("/login")
                 .defaultSuccessUrl("/")
                 .failureUrl("/login?error=true");
 
+        http.logout();
+
         http.logout()
                 .logoutUrl("/logout")
                 .logoutSuccessUrl("/")
-                .clearAuthentication(true)
-                .invalidateHttpSession(true);
-
+                .invalidateHttpSession(true) //true by default
+                .addLogoutHandler(new SecurityContextLogoutHandler())
+                .deleteCookies("JSESSIONID");
 
         http.authorizeRequests()
                 .anyRequest()
-                .permitAll();
+                .authenticated();
     }
 }

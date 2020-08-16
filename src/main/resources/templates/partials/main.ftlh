@@ -16,6 +16,22 @@
         </#list>
     </head>
     <body>
+    <nav class="navbar  navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="/">Главная</a>
+            <div class="collapse navbar-collapse justify-content-end">
+                <ul class="nav">
+                    <#if user??>
+                        <li class="nav-item">
+                            <a href="/add_new_chat">
+                                <button class="btn btn-outline-light ml-1" id="btn-search">Добавить Чат</button>
+                            </a>
+                        </li>
+                    </#if>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
     <div class="container">
         <#nested>

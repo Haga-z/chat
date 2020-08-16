@@ -1,15 +1,16 @@
 <#import "partials/main.ftlh" as main />
 
 <@main.renderWith>
-    <h1>HELLO</h1>
-    <#if chats??>
-        <h1>FILL</h1>
-        <#else >
-            <h1>EMPTY</h1>
-    </#if>
+    <h1 class="text-center">Чаты:</h1>
+
     <#list chats as chat>
+        <a href="/chat/${chat.chat.id}">
+            <div class="col text-center border mt-4 mb-4 p-3">
         <h1>${chat.chat.getName()}</h1>
         <h2>${chat.user.getUsername()}</h2>
-        <h1>--------------------------------</h1>
+            </div>
+        </a>
     </#list>
+
+
 </@main.renderWith>
