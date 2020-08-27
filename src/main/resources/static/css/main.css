@@ -17,3 +17,11 @@ textarea{
     padding: 3px;
     border-bottom: 2px solid black;
 }
+.link-chat{
+    text-decoration: none;
+    color: black;
+}
+.link-chat:hover{
+    text-decoration: none;
+    color: black;
+}

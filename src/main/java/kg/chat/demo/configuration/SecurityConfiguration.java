@@ -39,16 +39,14 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http
                 .authorizeRequests()
-                .antMatchers("/admin/**").hasRole("ADMIN")
-                .antMatchers("/chats").hasRole("USER")
+                .antMatchers("/add_employee").hasRole("ADMIN")
+                .antMatchers("/chats").permitAll()
                 .antMatchers("/login").permitAll()
                 .and()
                 .formLogin()
                 .loginPage("/login")
                 .defaultSuccessUrl("/")
                 .failureUrl("/login?error=true");
-
-        http.logout();
 
         http.logout()
                 .logoutUrl("/logout")

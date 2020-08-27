@@ -44,6 +44,7 @@ public class ChatUserService {
                 .name(name)
                 .build();
         chatRepository.save(chat);
+
         var chatUser = ChatUser.builder()
                 .user(user.get())
                 .chat(chat)

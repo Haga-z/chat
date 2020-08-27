@@ -2,7 +2,7 @@
 preloadMessages();
 
 function preloadMessages() {
-    setInterval(preloadWindow, 20000);
+    setInterval(preloadWindow, 500);
 }
 
 async function getMessage() {
@@ -60,5 +60,6 @@ function pushMessage(form) {
     }).catch(console.error);
     let elem = createMessage(message);
     document.getElementById("chat-body").appendChild(elem);
+    document.getElementById("message").value="";
 
 }

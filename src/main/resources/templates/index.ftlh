@@ -9,6 +9,7 @@
                 <p class="index-content"></p>
             </div>
         </div>
+
     <#else>
     <p>Войдите в систему!</p>
     </#if>

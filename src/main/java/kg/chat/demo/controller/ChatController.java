@@ -39,6 +39,7 @@ public class ChatController {
     public String getChats(Principal principal, Model model){
         model.addAttribute("chats",chatUserService.getChatUser(principal));
         model.addAttribute("user",UserDTO.from(userRepository.findByUsername(principal.getName()).get()));
+        model.addAttribute("role",userRepository.findByUsername(principal.getName()).get().getRoles().get(0));
         return "chats";
 
     }
@@ -51,6 +52,7 @@ public class ChatController {
         model.addAttribute("messages",messages);
         model.addAttribute("chat", ChatDTO.from(chatRepository.findById(id).get()));
         model.addAttribute("user", UserDTO.from(user.get()));
+        model.addAttribute("role",userRepository.findByUsername(principal.getName()).get().getRoles().get(0));
         return "single_chat";
     }
 
@@ -73,6 +75,7 @@ public class ChatController {
         var users = userRepository.findAllByUsernameIsNot(principal.getName());
         model.addAttribute("user", user.get());
         model.addAttribute("users",users);
+        model.addAttribute("role",userRepository.findByUsername(principal.getName()).get().getRoles().get(0));
         return "create_chat";
     }
     @PostMapping("/create_chat")

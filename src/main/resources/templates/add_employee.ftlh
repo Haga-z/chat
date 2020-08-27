@@ -17,7 +17,7 @@
         <div>
             <label class="flex-v-center">
                 <p class="label-input-text">Пароль:</p>
-                <input class="form-control mb-2" type="text" name="password" placeholder="********" required>
+                <input class="form-control mb-2" type="password" name="password" placeholder="********" required>
             </label>
         </div>
         <div>

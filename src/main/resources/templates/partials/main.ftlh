@@ -29,15 +29,30 @@
                         </li>
                         <li class="nav-item">
                             <a href="/chats">
-                                <button class="btn btn-outline-light ml-1" id="btn-search">Мои чаты</button>
+                                <button class="btn btn-outline-light ml-1 mr-1" id="btn-search">Мои чаты</button>
                             </a>
                         </li>
+                        <li class="nav-item">
+                        <form action="/logout" method="post">
+                            <#if _csrf??>
+                                <input type="hidden" name="${(_csrf.parameterName)!'csrf'}"
+                                       value="${(_csrf.token)!'--no-token--'}"/>
+                            </#if>
+                            <button class="btn btn-outline-light ">Выйти</button>
+                        </form>
+                        </li>
+                        <#if role.name=="ROLE_ADMIN">
+                            <li class="nav-item">
+                                <a href="/add_employee">
+                                    <button class="btn btn-outline-light ml-1" id="btn-search">Добавить Юзера</button>
+                                </a>
+                            </li>
+                        </#if>
                     </#if>
                 </ul>
             </div>
         </div>
     </nav>
-
     <div class="container">
         <#nested>
     </div>

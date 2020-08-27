@@ -1,6 +1,6 @@
 
 CREATE TABLE if not exists users (
-    id serial PRIMARY KEY,
+    id SERIAL PRIMARY KEY,
     username VARCHAR ( 50 ) UNIQUE NOT NULL,
     password VARCHAR ( 128 ) NOT NULL,
     created_at TIMESTAMP NULL
