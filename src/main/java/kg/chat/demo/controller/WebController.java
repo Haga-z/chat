@@ -5,7 +5,6 @@ import kg.chat.demo.Repositories.UserRepository;
 import kg.chat.demo.model.Role;
 import kg.chat.demo.model.User;
 import lombok.AllArgsConstructor;
-import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -14,7 +13,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import javax.servlet.http.HttpSession;
 import java.security.Principal;
 import java.time.OffsetDateTime;
 import java.util.ArrayList;

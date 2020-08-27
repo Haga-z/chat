@@ -1,10 +1,8 @@
 package kg.chat.demo.DTO;
 
 import kg.chat.demo.model.Chat;
-import kg.chat.demo.model.User;
 import lombok.*;
 
-import javax.persistence.criteria.CriteriaBuilder;
 
 @Data
 @AllArgsConstructor(access = AccessLevel.PRIVATE)

@@ -1,7 +1,6 @@
 package kg.chat.demo.controller;
 
 import kg.chat.demo.DTO.MessageDTO;
-import kg.chat.demo.model.Message;
 import kg.chat.demo.service.MessageService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.MediaType;

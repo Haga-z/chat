@@ -1,6 +1,5 @@
 package kg.chat.demo.DTO;
 
-import kg.chat.demo.model.Chat;
 import kg.chat.demo.model.Message;
 import lombok.*;
 

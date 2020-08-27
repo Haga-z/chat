@@ -2,9 +2,10 @@
 
 <@main.renderWith>
 
-    <div class="justify-content-center">
+    <div class="row justify-content-center mt-3">
         <form method="post" action="/create_chat">
-            <select name="user_id">
+            <h4 class="text-center">Пользователь</h4>
+            <select class="form-control" name="user_id">
                 <#list users as user>
                     <option name="user_id" value="${user.id}">${user.username}</option>
                 </#list>
@@ -12,8 +13,9 @@
             <#if _csrf??>
                 <input type="hidden" name="${(_csrf.parameterName)!'csrf'}" value="${(_csrf.token)!'--no-token--'}"/>
             </#if>
-            <input type="text" name="chat_name" required>
-            <button class="btn btn-outline-dark" type="submit">Создать</button>
+            <h4 class="text-center mt-2">Название чата</h4>
+            <input class="form-control " type="text" name="chat_name" required>
+            <button class="btn btn-outline-dark mt-3" type="submit">Создать</button>
         </form>
     </div>
 

@@ -13,13 +13,13 @@
                 </#if>
                 <div>
                     <label class="flex flex-v-center ">
-                        <span class="label-input-text">UserName:</span>
+                        <span class="label-input-text">Username:</span>
                         <input class="form-control mb-2" name="username"  value="${(dto.username)!''}" autofocus >
                     </label>
                 </div>
                 <div>
                     <label class="flex flex-v-center label-input-text">
-                        <span class="label-input-text">Password:</span>
+                        <span class="label-input-text">Пароль:</span>
                         <input type="password" class="form-control mb-2" name="password" value="">
                     </label>
                 </div>
