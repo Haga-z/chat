@@ -2,7 +2,7 @@
 
 Админ: username - admin ; password - admin
 
-Юзеры:  username -| user1 ; password - user1 |  username - user2 ; password - user2 |  username - user3 ; password - user3 |
+Юзеры: | username - user1 ; password - user1 |  username - user2 ; password - user2 |  username - user3 ; password - user3 |
 
 Немного коряво плучилось , пытался сделать через WebSocket но не смог нормально разобраться , в итогде сделал через js preload , запросами на restApi с сообщениями каждые 0.5сек.
 
