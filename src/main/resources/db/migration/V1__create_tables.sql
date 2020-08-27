@@ -16,6 +16,7 @@ CREATE TABLE messages (
    id serial PRIMARY KEY,
    text varchar ( 500 ) NOT NULL,
    created_at TIMESTAMP NULL,
+   delivered boolean NOT NULL default false,
    user_id INT NOT NULL,
    chat_id INT NOT NULL,
        FOREIGN KEY (user_id)

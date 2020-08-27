@@ -12,13 +12,6 @@
     <#else>
     <p>Войдите в систему!</p>
     </#if>
-    <form class="flex box-128" action="/logout" method="post">
-        <#if _csrf??>
-            <input type="hidden" name="${(_csrf.parameterName)!'csrf'}"
-                   value="${(_csrf.token)!'--no-token--'}"/>
-        </#if>
-        <button class="btn btn-outline-light ">Выйти</button>
-    </form>
 
 
 </@main.renderWith>

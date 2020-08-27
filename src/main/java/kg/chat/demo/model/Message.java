@@ -27,5 +27,7 @@ public class Message {
 
     private String text;
 
+    private boolean delivered;
+
     private OffsetDateTime created_at;
 }

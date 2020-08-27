@@ -1,4 +1,4 @@
-<#macro renderWith title="crm" scripts=[""] styles=[""]>
+<#macro renderWith title="crm" scripts=["/js/main.js"] styles=["/css/main.css"]>
     <!DOCTYPE html>
     <html lang="en">
     <head>
@@ -25,6 +25,11 @@
                         <li class="nav-item">
                             <a href="/add_new_chat">
                                 <button class="btn btn-outline-light ml-1" id="btn-search">Добавить Чат</button>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/chats">
+                                <button class="btn btn-outline-light ml-1" id="btn-search">Мои чаты</button>
                             </a>
                         </li>
                     </#if>

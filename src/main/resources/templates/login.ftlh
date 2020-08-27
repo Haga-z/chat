@@ -24,7 +24,7 @@
                     </label>
                 </div>
                 <div>
-                    <button class="btn btn-outline-primary btn-block"type="submit">Sign In!</button>
+                    <button class="btn btn-outline-primary btn-block"type="submit">Войти</button>
                 </div>
             </form>
         </div>
